@@ -13,16 +13,37 @@ const questions = [
 {
     type:"input",
     message: "What is the title of your project",
-    name:"title"
+    name:"Title"
 },
 {   type:"input",
-    message: "What is the title of your project",
-    name:"title"
-}   
-    type:"input",
-    message: "What is the title of your project",
-    name:"title"
+    message: "Write a decrption of your project",
+    name:"Description"
 },
+{
+    type:"input",
+    message: "Installation Instructions",
+    name:"Install"
+},
+{   
+    type:"input",
+    message: "Please Explain How To Use The Application Created",
+    name:"Usage"
+},
+{   
+    type:"list",
+    message:"Which license are you using?",
+    name:"License"
+    choices: [
+        "MIT License",
+        "GVL GPL License",
+        "Apache License",
+        "No License",
+
+    ]
+
+    ]
+},
+
 
 
 
