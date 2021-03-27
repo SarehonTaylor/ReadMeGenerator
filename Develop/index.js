@@ -40,9 +40,29 @@ const questions = [
         "No License",
 
     ]
-
-    ]
 },
+{   
+    type:"input",
+    message: "Are there any Contributors",
+    name:"Contributons"
+},
+{   
+    type:"input",
+    message: "How to test the app",
+    name:"Test"
+},
+{   
+    type:"input",
+    message: "Any Questions?",
+    name:"Questions"
+},
+},
+{   
+    type:"input",
+    message: "Enter Your GitHub Username?",
+    name:"Questions"
+},
+
 
 
 
