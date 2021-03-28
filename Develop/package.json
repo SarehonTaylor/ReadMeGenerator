@@ -1,14 +1,27 @@
 {
-  "name": "static-site",
+  "name": "thereadmegenerator",
   "version": "1.0.0",
-  "description": "",
+  "description": "this application will create a README.md file based on all of the questions that are answerd by the end user.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Sarehon Taylor",
   "license": "ISC",
   "dependencies": {
     "inquirer": "^6.3.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SarehonTaylor/ReadMeGenerator.git"
+  },
+  "keywords": [
+    "README.md",
+    "generator"
+  ],
+  "bugs": {
+    "url": "https://github.com/SarehonTaylor/ReadMeGenerator/issues"
+  },
+  "homepage": "https://github.com/SarehonTaylor/ReadMeGenerator#readme"
 }
