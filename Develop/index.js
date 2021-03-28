@@ -11,8 +11,8 @@ const questions = [
     name:"Title"
 },
 {   type:"input",
-    message: "Write a decrption of your project",
-    name:"description"
+    message: "Write a description of your project",
+    name:"Description"
 },
 {
     type:"input",
@@ -87,7 +87,7 @@ function init() {
         const response = generateMarkdown(answers);
         console.log(answers);
        
-        writeToFile("README.md", response);
+        writeToFile("GENERATEDREADME.md", response);
       
     })
     
