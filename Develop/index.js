@@ -1,22 +1,19 @@
-// TODO: Include packages needed for this application
+//Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs)');
-const utli = require('util');
-const generateMarkdown = require("./utils/generateMarkdown")
-// TODO: Create an array of questions for user input
-const questions = [
+const util = require('util');
+
+//Array of questions for user input
+const writeFileAsync = util.promisify(fs.writeFile)
+function promptUser(){
+    return inquirer.prompt([
 {
     type:"input",
     message: "What is the title of your project",
     name:"title"
 },
-{
-    type:"input",
-    message: "What is the title of your project",
-    name:"Title"
-},
 {   type:"input",
-    message: "Write a decrption of your project",
+    message: "Write a descrption of your project",
     name:"Description"
 },
 {
@@ -28,19 +25,8 @@ const questions = [
     type:"input",
     message: "Please Explain How To Use The Application Created",
     name:"Usage"
-},
-{   
-    type:"list",
-    message:"Which license are you using?",
-    name:"License"
-    choices: [
-        "MIT License",
-        "GVL GPL License",
-        "Apache License",
-        "No License",
+},   
 
-    ]
-},
 {   
     type:"input",
     message: "Are there any Contributors",
@@ -56,46 +42,49 @@ const questions = [
     message: "Any Questions?",
     name:"Questions"
 },
-{   
-    type:"input",
-    message: "Enter Your GitHub Username?",
-    name:"Questions"
-},
+])
+}
 
 
+const generateREADME = (answers) =>
+`
+# ${answers.title}
+[![License: ${answers.license}](https://img.shields.io/badge/License-${answers.license}-blue.svg)](https://opensource.org/licenses/${answers.license})
+## Description
+${answers.description}
+## Table of Contents
+[Installation](#Installation)  
+[Usage](#Usage)  
+[License](#License)  
+[Contributions](#Contributions)  
+[Testing](#Testing)  
+[Questions](#Questions)
+## Installation
+${answers.install}
+## Usage
+${answers.usage}
+## License
+${answers.license}
+## Contributions
+${answers.contribution}
+## Testing
+${answers.test}
+## Questions
+[GitHub](https://github.com/${answers.github})  
+Feel free to reach out to me by [email](mailto:${answers.email}) with any questions you may have.
+`;
 
-
-
-
-
-];
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-fs.writeFile(fileName, data, (err) => {
-    if (err) {
-        throw err;
-    }
-        console.log("The ReadMe Was Created Sucessfully")
+function init() {
+  promptUser()
+    .then(function(answers) {
+        writeFileAsync('README.md', generateREADME(answers));
+    })
+    .then(function() {
+        console.log('Successfully wrote to README.md');
+    })
+    .catch(function(err) {
+        console.error(err);
     });
 };
 
-
-// TODO: Create a function to initialize app
-function init() {
-    inquirer.prompt(questions.then((answers) => {
-        const responce = generateMarkdown(answers);
-        console.log(answers);
-        writeToFile("README.md", responce);
-
-    }
-}
-
-// Function call to initialize app
-init(); {
-    inquirer.prompt(questions).then((answers) => {
-        const responce = generateMarkdown(answers);
-        console.log(answers);
-        writeToFile("R")
-    }
-}
+init();
