@@ -8,16 +8,11 @@ const questions = [
 {
     type:"input",
     message: "What is the title of your project",
-    name:"title"
-},
-{
-    type:"input",
-    message: "What is the title of your project",
     name:"Title"
 },
 {   type:"input",
     message: "Write a decrption of your project",
-    name:"Description"
+    name:"description"
 },
 {
     type:"input",
@@ -38,7 +33,7 @@ const questions = [
 {   
     type:"input",
     message: "Are there any Contributors",
-    name:"Contributons"
+    name:"Contributors"
 },
 {   
     type:"input",
@@ -53,8 +48,14 @@ const questions = [
 {   
     type:"input",
     message: "Enter Your GitHub Username?",
-    name:"Questions"
+    name:"GitHub"
 },
+{   
+    type:"input",
+    message: "Enter Your Email Address?",
+    name:"Email"
+},
+
 
 ];
 
