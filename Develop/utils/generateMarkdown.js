@@ -24,8 +24,8 @@ ${response.Contributors}
 ## Test
 ${response.Test}
 ## Questions
-If you want to contact me:
-Github:[${response.Github}]
+If you would like to contact me I can be reached at:
+Github:[${response.Git}]
 Email:[${response.Email}]
 `;}
 
